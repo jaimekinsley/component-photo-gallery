@@ -15,9 +15,6 @@ export default class App extends Component {
   
 render() {
   
-        
- 
-
   return (
       <div className="header">
         <Header />
@@ -43,24 +40,58 @@ render() {
 
           </section>
 
+          <section className="horn-options">
+
+            <select className="creature-horn-filter" onChange={this.handleChange}>
+              <option value="" defaultValue>
+                Number of Horns
+              </option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              <option value="100">One Hundred</option>
+              </select>
+
+          </section>
+
         
             <ul className="creatures">
             
            { creatureData
               .filter(creature => {
-                //   // if there is nothing selected, show ALL CREATURES
+                // if there is nothing selected, show ALL CREATURES
                   if (!this.state.selected) return true;
           
-                //   // otherwise only show the creature if the creature keyword is the same as the selected creature keyword
+                // otherwise only show the creature if the creature keyword is the same as the selected creature keyword
                   return creature.keyword === this.state.selected;
-                })
-           .map(animal => {
-             console.log(animal);
+                 })
+           
+            .map(animal => {
 
     return <ImageItem creature={animal}/>
     })}
            </ul>
-      </div>
+
+
+           <ul className="horned-creatures">
+            
+           { creatureData
+              .filter(creature => {
+                // if there is nothing selected, show ALL CREATURES
+                  if (!this.state.selected) return true;
+          
+                // otherwise only show the creature if the creature keyword is the same as the selected creature keyword
+                  return creature.horns === this.state.selected;
+                 })
+           
+            .map(horns => {
+
+    return <ImageItem creature={horns}/>
+    })}
+           </ul>
+
+
+          </div>
     )
   }
 }
