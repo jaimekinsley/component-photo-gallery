@@ -3,64 +3,63 @@ import creatureData from './data.js'
 import ImageItem from './ImageItem.js'
 
 
-// const creature = {
-//   horns: 2, 
-//   title: 'monster',
-//   url: '',
-//   description: 'scary'
-// }  
-
-        {/* <ImageItem images = {creature}/> */}
 
 
 export default class App extends Component {
-
+  state = { selected: null };
+  
+  handleChange = (e) => {
+    console.log(e.target.value)
+    this.setState({ selected: e.target.value });
+  };
   
 render() {
-    return (
+  
+        
+ 
+
+  return (
       <div>
 
-<section className="options">
+      <section className="options">
             {/* lets move this to another component? */}
+
             <select className="creature-type-filter" onChange={this.handleChange}>
               <option value="" defaultValue>
                 All Types
               </option>
-              <option value="Narwhal">Narwhal</option>
-              <option value="Rhino">Rhino</option>
-              <option value="Unicorn">Unicorn</option>
-              <option value="Unilego">Unilego</option>
-              <option value="Triceratops">Triceratops</option>
-              <option value="Markhor">Markhor</option>
-              <option value="Mouflon">Mouflon</option>
-              <option value="Addax">Addax</option>
-              <option value="Chameleon">Chameleon</option>
-              <option value="Lizard">Lizard</option>
-              <option value="Dragon">Dragon</option>
-
-
-
+              <option value="narwhal">Narwhal</option>
+              <option value="rhino">Rhino</option>
+              <option value="unicorn">Unicorn</option>
+              <option value="unilego">Unilego</option>
+              <option value="triceratops">Triceratops</option>
+              <option value="markhor">Markhor</option>
+              <option value="mouflon">Mouflon</option>
+              <option value="addax">Addax</option>
+              <option value="chameleon">Chameleon</option>
+              <option value="lizard">Lizard</option>
+              <option value="dragon">Dragon</option>
             </select>
+
           </section>
 
-        <section className="list-section">
+        
             <ul className="creatures">
-              {
-                creatureData
-                  .filter(creature => {
-                    // if there is nothing selected, show ALL CREATURES
-                    if (!this.state.selected) return true;
             
-                    // otherwise only show the creature if the creature keyword is the same as the selected creature keyword
-                    return creature.type === this.state.selected;
-                  })
-                  .map(animal => {
-                  console.log(animal)
-                  return <ImageItem creature={animal} />
-                  })        
-            }
-            </ul>
-          </section>
+           { creatureData
+              .filter(creature => {
+                //   // if there is nothing selected, show ALL CREATURES
+                  if (!this.state.selected) return true;
+          
+                //   // otherwise only show the creature if the creature keyword is the same as the selected creature keyword
+                  return creature.keyword === this.state.selected;
+                })
+           .map(animal => {
+             console.log(animal);
+             
+    return <ImageItem creature={animal}/>
+    })}
+           </ul>
       </div>
     )
   }
