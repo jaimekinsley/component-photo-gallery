@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import creatureData from './data.js'
 import ImageItem from './ImageItem.js'
-
+import Header from './Header.js'
 
 
 
@@ -19,10 +19,10 @@ render() {
  
 
   return (
-      <div>
-
+      <div className="header">
+        <Header />
       <section className="options">
-            {/* lets move this to another component? */}
+            {/* lets move this to another component?  */}
 
             <select className="creature-type-filter" onChange={this.handleChange}>
               <option value="" defaultValue>
@@ -56,7 +56,7 @@ render() {
                 })
            .map(animal => {
              console.log(animal);
-             
+
     return <ImageItem creature={animal}/>
     })}
            </ul>

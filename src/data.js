@@ -105,14 +105,13 @@ const creatures = [
     },
     {
       url:
-        "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/28476658_9c97f35096_o.jpg",
+        "https://www.huntermeetshunter.com/verkaufen/1265/go_20hunting_20kft._20muffel1.jpg",
       title: "Mouflon",
       description: "Those horns though",
       keyword: "mouflon",
       horns: 2
     },
-    {
-      url: "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/addax.jpg",
+    {url: "https://vignette.wikia.nocookie.net/cn-animals/images/1/1d/Addax_djbil_tunisia_2010_newby_03.jpg/revision/latest/scale-to-width-down/1000?cb=20180903021447",
       title: "Addax",
       description:
         "This guy is basically extinct but survives well in captivity, so they're frequently found in zoos",
@@ -129,7 +128,7 @@ const creatures = [
     },
     {
       url:
-        "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/chameleon.jpg",
+        "http://www.chameleoncaremanual.com/images/jackson-chameleon.jpg",
       title: "Happy Jackson's Chameleon",
       description: "These are really common in Hawaii",
       keyword: "chameleon",
